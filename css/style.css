@@ -1,0 +1,192 @@
+@import url(./reset.css);
+@font-face {
+    font-family: 'MabinogiClassicR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'MabinogiClassicR';
+    background-color: darkslategray;
+    color: white;
+    z-index: 100;
+
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: white;
+}
+
+.h2{
+    font-size: 20px
+}
+/* 헤더  */
+.header { 
+    border-bottom: 2px solid white;
+    padding: 25px;
+}
+
+.logo{
+    font-size: 30px;
+    padding-top: 5px;
+}
+
+/* 메뉴 nav바 */
+.gnb {
+    position: absolute; 
+    left:35%; top: 35px;
+}
+.gnb  li{  
+    float: left;
+    padding: 0px 35px;
+    font-size: 20px;
+    
+}
+
+/* li 회전 애니메이션 */
+@keyframes liRotate {
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(90deg);}
+    50%{transform: rotate(180deg);}
+    75%{transform: rotate(270deg);}
+    100%{transform: rotate(360deg);}
+}
+.gnb li:hover{
+    animation: liRotate 1s ease;
+}
+
+/* 메인 */
+.main-container{
+    display: grid;
+    border: 1px solid white;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(2,2fr);
+    margin: 30px;
+    z-index: 100;
+    
+}
+.section1{
+    border: 1px solid white;
+    border-radius: 5px;
+    grid-column: 1/3;
+    grid-row: 1/3  ;
+    margin: 15px;
+    display: grid;
+    grid-template-rows: 4fr 6fr
+}
+.section1 div {
+    border: 1px solid white;
+    margin: 10px;
+    
+}
+
+.section1 div:last-child{
+    padding:10px;
+
+}
+.section2{ 
+    border: 1px solid white;
+    border-radius: 5px;
+    grid-column: 3/6;
+    grid-row: 1/2;
+    margin: 15px;
+    padding:10px;
+}
+.section2 div:first-child{
+    border-bottom: 1px dashed white;
+    font-size: 20px;
+    padding: 5px 0px;
+}
+.section2 ul {
+    padding-top: 5px;
+}
+.section2 ul li{
+    padding: 7px 0;
+}
+.section3{
+    border:1px solid white;
+    border-radius: 5px;
+    grid-column: 3/6;
+    grid-row: 2/2;
+    margin: 15px;
+    padding:10px;
+}
+.section3 div:first-child{
+    border-bottom: 1px dashed white;
+    font-size: 20px;
+    padding: 5px 0px;
+}
+.section3 ul {
+    padding-top: 5px;
+}
+.section3 ul li{
+    padding:5px 0; 
+}
+.section3 ul > li::after{
+    display: inline-block;
+    width: 20px; height: 19px;
+    border-radius: 50%;
+    background-color: white;
+    content: "N";
+    color: black;
+    text-align: center;
+    
+}
+
+/* 상위로 가는 버튼 */
+.top-button{
+    position: absolute;
+    right: 3%;
+}
+/* 푸터 */
+
+.footer{
+    border-top: 2px solid white;
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+}
+.contact{
+    position: fixed;
+    padding:15px;
+    font-size:25px;
+}
+
+@media screen and (max-width:576px) {
+    body{
+        background-color:rgba(105,105,105,1);
+        z-index: 100;
+    }
+    .main-container{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 2fr 1fr 1fr
+    }
+    .section1{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .section2{
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+    .section3{
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+    .gnb {
+        position: absolute ;
+        left: 20%; top: 35px;
+    }
+    .gnb  li{  
+        padding: 0px 30px;
+    }
+    .footer{
+        z-index: 1000;
+        background-color:black;
+    }
+}
